@@ -15,6 +15,8 @@ app.use(express.json());
 mongoose.connect(dbUrl);
 
 mongoose.connection.on('connected', () => {
+    app.use(express.static('browser'))
+
     app.listen(port, () => console.log('server started'))
     console.log('mongoose connected');
 });
